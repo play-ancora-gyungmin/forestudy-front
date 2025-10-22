@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 import TimerCard from './components/TimerCard/TimerCard';
 import TimerBox from './components/TimerBox/TimerBox';
 import TimerTop from './components/TimerTop/TimerTop';

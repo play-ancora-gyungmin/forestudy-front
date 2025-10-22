@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 import styles from './TimerCard.module.css';
 import Toast from '../../../../components/Toast/Toast';
 import { savePoint } from '../../../../api/PointService/PointService';
@@ -72,7 +72,9 @@ const TimerCard = ({ setPoints }) => {
   };
 
   const handleStop = async () => {
+    if (!running) return;
     setRunning(false);
+    setStarted(false);
     console.log('Stop 클릭', { studyId, point });
     try {
       const data = await savePoint(studyId, point);

@@ -14,8 +14,9 @@ const TimerTop = ({ studyId, points: externalPoints }) => {
       try {
         const res = await fetch(`${API_URL}/study/${studyId}`);
         const data = await res.json();
-        setTitle(data.title);
-        setPoints(data.points);
+        console.log('API full data:', data);
+        setTitle(data.data.title);
+        setPoints(data.data.point);
       } catch (err) {
         console.error(err);
       } finally {
